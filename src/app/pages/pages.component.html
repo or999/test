@@ -1,0 +1,62 @@
+<nz-layout>
+
+  <nz-header>
+    <div class="logo"><span class="img"
+        style="background-image:url(https://img.alicdn.com/tfs/TB1sNayNfb2gK0jSZK9XXaEgFXa-52-48.png) ;"></span></div>
+  </nz-header>
+
+  <nz-layout>
+    <nz-sider nzWidth="200px" nzTheme="light">
+      <ul nz-menu nzMode="vertical" style="width: 100px;height: 100%;" [nzInlineCollapsed]="true">
+        <li nz-submenu [nzTitle]="titleTpl"></li>
+        <ng-template #titleTpl>
+          <span class="img"
+            style="background-image:url(https://img.alicdn.com/tfs/TB1sNayNfb2gK0jSZK9XXaEgFXa-52-48.png) ;"></span>
+        </ng-template>
+        <li nz-submenu [(nzOpen)]="openMap.sub1" (nzOpenChange)="openHandler('sub1')" [nzTitle]="titleTp2"></li>
+        <ng-template #titleTp2>
+          <span class="img"
+            style="background-image:url(https://tcs-ga.teambition.net/thumbnail/111w0d1cd6f7a20623c574f9f8276ed2e75b/w/200/h/200) ;"></span>
+          <div>项目</div>
+        </ng-template>
+        <li nz-submenu [(nzOpen)]="openMap.sub1" (nzOpenChange)="openHandler('sub1')" [nzTitle]="titleTp3"></li>
+        <ng-template #titleTp3>
+          <span class="img"
+            style="background-image:url(https://tcs-ga.teambition.net/thumbnail/111v73a89f08ddea2c90f670de5c82cd7b26/w/144/h/144) ;"></span>
+          <div>待办</div>
+        </ng-template>
+        <li nz-submenu [(nzOpen)]="openMap.sub1" (nzOpenChange)="openHandler('sub1')" [nzTitle]="titleTp4"></li>
+        <ng-template #titleTp4>
+          <span class="img"
+            style="background-image:url(https://tcs-ga.teambition.net/thumbnail/111v044bfb740f84296e82176538ca165378/w/144/h/144) ;"></span>
+          <div>日历</div>
+        </ng-template>
+        <li nz-submenu [(nzOpen)]="openMap.sub2" (nzOpenChange)="openHandler('sub2')" nzTitle="Navigation Two"
+          nzIcon="appstore">
+          <ul>
+            <li nz-menu-item>Option 5</li>
+            <li nz-menu-item>Option 6</li>
+            <li nz-submenu nzTitle="Submenu">
+              <ul>
+                <li nz-menu-item>Option 7</li>
+                <li nz-menu-item>Option 8</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li nz-submenu [(nzOpen)]="openMap.sub3" (nzOpenChange)="openHandler('sub3')" nzTitle="Navigation Three"
+          nzIcon="setting">
+          <ul>
+            <li nz-menu-item>Option 9</li>
+            <li nz-menu-item>Option 10</li>
+            <li nz-menu-item>Option 11</li>
+          </ul>
+        </li>
+      </ul>
+    </nz-sider>
+
+    <nz-layout class="inner-layout">
+      <nz-content>Content</nz-content>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>
