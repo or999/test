@@ -13,13 +13,15 @@ import zh from '@angular/common/locales/zh';
 import { PagesComponent } from './pages/pages.component';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzPopoverModule } from 'ng-zorro-antd/popover';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
 registerLocaleData(zh);
-
 @NgModule({
   declarations: [
     AppComponent,
-
-    
     PagesComponent
   ],
   imports: [
@@ -29,7 +31,12 @@ registerLocaleData(zh);
     HttpClientModule,
     BrowserAnimationsModule,
     NzMenuModule,
-    NzLayoutModule
+    NzLayoutModule,
+    NzDropDownModule,
+    NzIconModule,
+    NzPopoverModule,
+    NzDividerModule,
+    NzBadgeModule
     
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],

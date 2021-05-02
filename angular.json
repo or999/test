@@ -95,7 +95,6 @@
             ],
             "styles": [
               "src/styles.css"
-
             ],
             "scripts": []
           }
@@ -128,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "ng-ant"
+  "defaultProject": "ng-ant",
+  "cli": {
+    "analytics": "e355a07c-c095-4a01-b306-ad90e9bacad3"
+  }
 }

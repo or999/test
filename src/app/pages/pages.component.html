@@ -1,62 +1,83 @@
 <nz-layout>
 
-  <nz-header>
-    <div class="logo"><span class="img"
-        style="background-image:url(https://img.alicdn.com/tfs/TB1sNayNfb2gK0jSZK9XXaEgFXa-52-48.png) ;"></span></div>
-  </nz-header>
+    <nz-sider nzWidth="80px"  nzTheme="light" style="height: 100vh;">
+        <div style="display: flex;flex-direction: column;justify-content: space-between;height: 100%;
+         box-shadow: 0 1px 5px 0 rgba(57,66,60,0.2);
+        background: white">
+            <ul nz-menu nzMode="vertical" class="menu-list" [nzInlineCollapsed]="true">
+                <li class="logo" style="background-image:url(https://img.alicdn.com/tfs/TB1sNayNfb2gK0jSZK9XXaEgFXa-52-48.png);">
+                </li>
+                <li nz-submenu [nzTitle]="titleTp2"></li>
+                <ng-template #titleTp2>
+                    <span class="img" style="background-image:url(https://tcs-ga.teambition.net/thumbnail/111w0d1cd6f7a20623c574f9f8276ed2e75b/w/200/h/200) ;"></span>
+                    <span class="text">项目</span>
+                </ng-template>
+                <li nz-submenu [nzTitle]="titleTp3"></li>
+                <ng-template #titleTp3 class="template">
+                    <span class="img" style="background-image:url(https://tcs-ga.teambition.net/thumbnail/111v73a89f08ddea2c90f670de5c82cd7b26/w/144/h/144) ;"></span>
+                    <span class="text">待办</span>
+                </ng-template>
+                <li nz-submenu [nzTitle]="titleTp4"></li>
+                <ng-template #titleTp4 class="template">
+                    <span class="img" style="background-image:url(https://tcs-ga.teambition.net/thumbnail/111v044bfb740f84296e82176538ca165378/w/144/h/144) ;"></span>
+                    <span class="text">日历</span>
+                </ng-template>
+            </ul>
+            <ul nz-menu nzMode="vertical" style="width: 100%;"  [nzInlineCollapsed]="true" class="footer-menu">
+                <li nz-popover [nzPopoverContent]="contentTemplate1" nzPopoverTrigger="click" nzPopoverPlacement="right">
+                    <i nz-icon nzType="plus-circle" nzTheme="twotone" nzTwotoneColor="#006CFA"></i></li>
+                <ng-template #contentTemplate1>
+                    <ul class="tem-content-list">
+                        <li><i nz-icon nzType="check"></i><span>项目</span></li>
+                        <div class="line"></div>
+                        <li> <i nz-icon nzType="check" (click)="showChildren()"></i><span>任务</span> </li>
+                        <li> <i nz-icon nzType="check" (click)="showChildren()"></i><span>日程</span> </li>
+                        <li> <i nz-icon nzType="file" (click)="showChildren()"></i><span>文件</span> </li>
+                        <li> <i nz-icon nzType="file-text" (click)="showChildren()"></i><span>文档</span> </li>
+                        <li>
+                            <i nz-icon nzType="video-camera" (click)="showChildren()"></i>
+                            <nz-badge style="position: absolute; left: 20px;bottom:15px;" nzStatus="processing"></nz-badge>
+                            <span> 视频讨论</span>
+                        </li>
+                    </ul>
+                </ng-template>
+                <li><i nz-icon nzType="bell" nzTheme="outline"></i></li>
+                <li><i nz-icon nzType="search" nzTheme="outline"></i></li>
+                <li nz-popover [nzPopoverContent]="contentTemplate2" nzPopoverTrigger="click" nzPopoverPlacement="right">
+                    <i nz-icon nzType="question-circle" nzTheme="outline"></i></li>
+                <ng-template #contentTemplate2>
+                    <ul class="tem-content-list">
+                        <li> <i nz-icon nzType="copy" (click)="showChildren()"></i><span> 在线支持</span></li>
+                        <li> <i nz-icon nzType="message" (click)="showChildren()"></i><span> 帮助中心</span></li>
+                        <li> <i nz-icon nzType="rise" (click)="showChildren()"></i> <span>增值服务</span></li>
+                        <li> <i nz-icon nzType="message" (click)="showChildren()"></i> <span>产品反馈</span></li>
+                        <div class="line"></div>
+                        <li> <i nz-icon nzType="global" (click)="showChildren()"></i> <span>访问官网</span></li>
+                        <li> <i nz-icon nzType="message" (click)="showChildren()"></i> <span>更新日志</span></li>
+                    </ul>
+                </ng-template>
+                <div class="user-name"><span nz-popover [nzPopoverContent]="contentTemplate3" nzPopoverTrigger="click" nzPopoverPlacement="right"></span></div>
+                <ng-template #contentTemplate3>
+                    <div class="user-pane">
+                        <ul class="tem-content-list">
+                            <li><img src="https://g.alicdn.com/teambition/web/teambition/images/tip.bfa2e89a.png"></li>
+                            <li><i nz-icon nzType="user" nzTheme="outline"></i><span>账号设置</span></li>
+                            <li><i nz-icon nzType="setting" nzTheme="outline"></i><span>偏好设置</span></li>
+                            <li><i nz-icon nzType="sync" nzTheme="outline"></i><span style="display: flex;flex-direction: column;">切换至国际服务器<span style=" color: #8c8c8c;"> 当前：中国大陆</span></span>
 
-  <nz-layout>
-    <nz-sider nzWidth="200px" nzTheme="light">
-      <ul nz-menu nzMode="vertical" style="width: 100px;height: 100%;" [nzInlineCollapsed]="true">
-        <li nz-submenu [nzTitle]="titleTpl"></li>
-        <ng-template #titleTpl>
-          <span class="img"
-            style="background-image:url(https://img.alicdn.com/tfs/TB1sNayNfb2gK0jSZK9XXaEgFXa-52-48.png) ;"></span>
-        </ng-template>
-        <li nz-submenu [(nzOpen)]="openMap.sub1" (nzOpenChange)="openHandler('sub1')" [nzTitle]="titleTp2"></li>
-        <ng-template #titleTp2>
-          <span class="img"
-            style="background-image:url(https://tcs-ga.teambition.net/thumbnail/111w0d1cd6f7a20623c574f9f8276ed2e75b/w/200/h/200) ;"></span>
-          <div>项目</div>
-        </ng-template>
-        <li nz-submenu [(nzOpen)]="openMap.sub1" (nzOpenChange)="openHandler('sub1')" [nzTitle]="titleTp3"></li>
-        <ng-template #titleTp3>
-          <span class="img"
-            style="background-image:url(https://tcs-ga.teambition.net/thumbnail/111v73a89f08ddea2c90f670de5c82cd7b26/w/144/h/144) ;"></span>
-          <div>待办</div>
-        </ng-template>
-        <li nz-submenu [(nzOpen)]="openMap.sub1" (nzOpenChange)="openHandler('sub1')" [nzTitle]="titleTp4"></li>
-        <ng-template #titleTp4>
-          <span class="img"
-            style="background-image:url(https://tcs-ga.teambition.net/thumbnail/111v044bfb740f84296e82176538ca165378/w/144/h/144) ;"></span>
-          <div>日历</div>
-        </ng-template>
-        <li nz-submenu [(nzOpen)]="openMap.sub2" (nzOpenChange)="openHandler('sub2')" nzTitle="Navigation Two"
-          nzIcon="appstore">
-          <ul>
-            <li nz-menu-item>Option 5</li>
-            <li nz-menu-item>Option 6</li>
-            <li nz-submenu nzTitle="Submenu">
-              <ul>
-                <li nz-menu-item>Option 7</li>
-                <li nz-menu-item>Option 8</li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li nz-submenu [(nzOpen)]="openMap.sub3" (nzOpenChange)="openHandler('sub3')" nzTitle="Navigation Three"
-          nzIcon="setting">
-          <ul>
-            <li nz-menu-item>Option 9</li>
-            <li nz-menu-item>Option 10</li>
-            <li nz-menu-item>Option 11</li>
-          </ul>
-        </li>
-      </ul>
-    </nz-sider>
+                            </li>
+                            <li style="color: brown;"><i nz-icon nzType="logout" nzTheme="outline"></i><span s>退出登录</span></li>
+                        </ul>
+                        <div>
+                            <i nz-icon nzType="download" nzTheme="outline"></i> <span>下载应用</span>
 
-    <nz-layout class="inner-layout">
-      <nz-content>Content</nz-content>
-    </nz-layout>
-  </nz-layout>
+                        </div>
+                    </div>
+                </ng-template>
+                </ul>
+        </div>
+        </nz-sider>
+        <nz-layout class="right-layout">
+            <nz-content>Content</nz-content>
+        </nz-layout>
 </nz-layout>
